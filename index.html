@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #meme { max-width: 100%; }
+    </style>
+    <!-- Add meta tags for image URL -->
+    <meta property="og:image" content="https://aquamarine-elegant-meerkat-268.mypinata.cloud/ipfs/Qmdo6eeTUfnGE39ofKNAtaKnkKyZbromBKPAVKm5qXbPhY">
+</head>
+<body>
+    <h1>Meme Generator</h1>
+    <input type="text" id="topText" placeholder="Top Text"><br><br>
+    <input type="text" id="bottomText" placeholder="Bottom Text"><br><br>
+    <button onclick="generateMeme()">Generate Meme</button>
+    <br><br>
+    <img id="meme" src="" alt="Your Meme">
+    <script>
+        function generateMeme() {
+            const topText = document.getElementById('topText').value;
+            const bottomText = document.getElementById('bottomText').value;
+            const memeUrl = `https://api.memegen.link/images/custom/${topText}/${bottomText}.png`;
+            document.getElementById('meme').src = memeUrl;
+        }
+    </script>
+</body>
+</html>
